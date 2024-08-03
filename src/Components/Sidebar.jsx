@@ -1,11 +1,15 @@
 import React from "react";
 import './Sidebar.css'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Sidebar() {
+
+  const navigate=useNavigate();
+
   return (
     <>
-      <div className="sidebar-header">
+      <div className="sidebar-header hidden">
         <div className="Header-Rnp">
           <div className="logo">
             <span className="logo-text">#</span>
@@ -13,15 +17,15 @@ export default function Sidebar() {
           </div>
         </div>
         <div className="menu sidebar">
-          <div className="menu-item active">
+          <div onClick={()=>navigate('/ticket')} className="menu-item">
             <i className="icon-ticket" />
             <span>Ticket</span>
           </div>
-          <div className="menu-item">
+          <div onClick={()=>navigate('/members')} className="menu-item">
             <i className="icon-members" />
             <span>Members</span>
           </div>
-          <div className="menu-item">
+          <div onClick={()=>navigate('/history')} className="menu-item">
             <i className="icon-history" />
             <span>History</span>
           </div>
@@ -31,7 +35,7 @@ export default function Sidebar() {
             <i className="icon-settings" />
             <span>Setting</span>
           </div>
-          <div className="menu-item">
+          <div onClick={()=>navigate('/')} className="menu-item">
             <i className="icon-logout" />
             <span>Log Out</span>
           </div>
