@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/Sidebar';
+import MainLayout from './Components/MainLayout';
 import History from './Components/History';
 import Login from './Components/login';
 import Members from './Components/Members';
@@ -10,17 +10,15 @@ function App() {
   return (
     <div className="app-container">
       <BrowserRouter>
-      <Sidebar />
-        <div className="main-content">
-          <Routes>
-            <Route path='/' element={<Login />} />
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route element={<MainLayout />}>
             <Route path='/ticket' element={<Ticket />} />
             <Route path='/members' element={<Members />} />
             <Route path='/history' element={<History />} />
-          </Routes>
-        </div>
+          </Route>
+        </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
