@@ -1,8 +1,12 @@
 import React from 'react';
 import './login.css'; 
 import profilePic from './Images/0777cf943add46498ab08cf24fcf8a78.jpeg'; 
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  
+  const navigate=useNavigate();
+
   return (
     <div className="lp-wrapper">
       <div className="lp-container">
@@ -19,7 +23,7 @@ const LoginPage = () => {
               <span className="lp-toggle-password">Hide</span>
             </div>
 
-            <button type="submit">Log in</button>
+            <button onClick={()=>navigate('/ticket')} type="submit">Log in</button>
           </form>
           <p className="lp-secure-text">
             Secure login with reCAPTCHA subject to <a href="#">Google Terms & Privacy</a>
