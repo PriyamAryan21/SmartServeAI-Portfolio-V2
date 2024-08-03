@@ -1,6 +1,7 @@
 import './App.css';
 import Sidebar from './Components/Sidebar';
 import History from './Components/History';
+import Login from './Components/login'; 
 // import Members from './Components/Members';
 // import Ticket from './Components/Ticket';
 
@@ -9,9 +10,10 @@ function App() {
     <div className="app-container">
       <Sidebar />
       <div className="main-content">
-          <History/>
+          {/* <History/> */}
           {/* <Members/> */}
           {/* <Ticket/> */}
+          <Login/>
       </div>
     </div>
   );
